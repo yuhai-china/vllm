@@ -7,7 +7,7 @@ name = "vllm-o2"
 version = "0.1.0"
 description = "O2 dual-expert MoE model plugin for vLLM"
 requires-python = ">=3.10"
-dependencies = ["vllm>=0.25.1"]
+dependencies = ["vllm>=0.25.1", "o2-transformers"]
 
 [project.entry-points."vllm.general_plugins"]
 o2 = "vllm_o2:register"

@@ -10,6 +10,13 @@ def register():
     if _registered:
         return
 
+    try:
+        # registers the O2 tokenizer/processor/config classes with
+        # transformers so renamed checkpoint metadata keeps resolving
+        import o2_model  # noqa: F401
+    except ImportError:
+        pass
+
     from vllm.model_executor.models.config import (
         MODELS_CONFIG_MAP,
         Qwen3_5ForConditionalGenerationConfig,
