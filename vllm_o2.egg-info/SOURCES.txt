@@ -3,6 +3,7 @@ pyproject.toml
 vllm_o2/__init__.py
 vllm_o2/config.py
 vllm_o2/model.py
+vllm_o2/parsers.py
 vllm_o2.egg-info/PKG-INFO
 vllm_o2.egg-info/SOURCES.txt
 vllm_o2.egg-info/dependency_links.txt

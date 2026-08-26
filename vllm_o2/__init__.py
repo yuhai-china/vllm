@@ -33,6 +33,10 @@ def register():
     MODELS_CONFIG_MAP.setdefault(
         "O2ForConditionalGeneration", Qwen3_5ForConditionalGenerationConfig
     )
+
+    from .parsers import register_parsers
+
+    register_parsers()
     _registered = True
 
 
