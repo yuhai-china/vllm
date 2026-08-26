@@ -1,0 +1,2 @@
+[vllm.general_plugins]
+o2 = vllm_o2:register
