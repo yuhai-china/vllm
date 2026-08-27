@@ -24,7 +24,7 @@ def register():
     from vllm.model_executor.models.registry import ModelRegistry
     from vllm.transformers_utils.config import _CONFIG_REGISTRY
 
-    from .config import O2Config
+    from .config import O2Config, O2TextConfig
 
     _CONFIG_REGISTRY["o2"] = O2Config
     ModelRegistry.register_model(
@@ -33,6 +33,14 @@ def register():
     MODELS_CONFIG_MAP.setdefault(
         "O2ForConditionalGeneration", Qwen3_5ForConditionalGenerationConfig
     )
+
+    # Text-only variant (e.g. the fused identity checkpoint): flat o2_text
+    # config + causal-LM layout, no vision tower.
+    from vllm.model_executor.models.config import Qwen3_5ForCausalLMConfig
+
+    _CONFIG_REGISTRY["o2_text"] = O2TextConfig
+    ModelRegistry.register_model("O2ForCausalLM", "vllm_o2.model:O2ForCausalLM")
+    MODELS_CONFIG_MAP.setdefault("O2ForCausalLM", Qwen3_5ForCausalLMConfig)
 
     from .parsers import register_parsers
 
