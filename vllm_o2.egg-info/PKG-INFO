@@ -1,7 +1,0 @@
-Metadata-Version: 2.4
-Name: vllm-o2
-Version: 0.1.0
-Summary: O2 dual-expert MoE model plugin for vLLM
-Requires-Python: >=3.10
-Requires-Dist: vllm>=0.25.1
-Requires-Dist: o2-transformers
